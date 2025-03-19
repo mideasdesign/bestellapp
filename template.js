@@ -1,38 +1,37 @@
-function getBookListTemplate(i) {
-    return /* html */`
-            <div class="border border-gray-300 p-5 my-4 sm:p-10 rounded-3xl flex flex-col">
-              <div class="flex flex-col lg:flex-row mb-7 mr-4">
-                <img src="./assets/images/book${[i]}.webp" alt="" class="aspect-square mb-4 max-w-sm size-74 md:size-60 rounded-lg object-cover xl:aspect-7/8"> 
-                <div class=" ml-4">  
-                  <div class="flex mb-4">
-                    <button onclick="likesStates(${[i]})" id="liked${[i]}" class="cursor-pointer mr-2">
-                    </button> <h5 id="like${[i]}" class="mt-4 text-sm text-gray-700">Likes:${books[i].likes} </h5>  
-                  </div>             
-                  <h3 class="mt-4 text-xl sm:text-3xl md:text-2xl text-gray-700 h-auto mb-3 md:mb-0 md:min-h-21">${books[i].name} </h3>
-                  <h4 class="mt-4 text-sm text-gray-700">Autor: ${books[i].author} </h4>
-                  <h5 class="mt-4 text-sm text-gray-700">Gerne: ${books[i].genre} </h5>
-                  <h5 class="mt-4 text-sm text-gray-700">Erscheinungsjahr: ${books[i].publishedYear} </h5>
-                  <p class="mt-10 pt-10 text-3xl sm:text-2xl text-right font-medium text-red-600">€ ${books[i].price.toFixed(2)}</p>
-                </div>              
-              </div>
-              <div id="book-comment${[i]}" class="flex flex-col">
-              </div>
-
-              <div id="new-comment${[i]}" class="flex flex-col">
-              <h5 class="my-3">Kommentar erstellen:</h5>
-                <input type="text" id="comment-name${[i]}" class="border border-gray-300 rounded-md py-2 px-4" placeholder="Bitte Name eingeben" />
-                <textarea id="comment-content${[i]}" class="border border-gray-300 rounded-md py-2 px-4 my-4" placeholder="Bitte Kommentar eingeben"></textarea>
-                <button onclick="addComments(${i})" id="input-comment" class="border border-gray-200 hover:border-gray-300 bg-gray-200 hover:bg-transparent rounded-md py-2 px-4">speichern</button>
-              </div>
-            </div>
-    `
-}
-
-function getBookCommentsTemplate(i, j) {
-  return /* html */`
-    <div class="mb-5 flex flex-col">
-          <p class="flex text-sm">${books[i].comments[j].name}</p>
-          <p class="flex text-sm">${books[i].comments[j].comment}</p>
+function getDishTemplate(params) {
+  return `
+    <div class="card w-full shadow-sm my-2 p-4 border border-blue-900 rounded-2xl">
+      <div class="flex right-0 w-full">
+          <button class="border border-blue-500 rounded-xl py-1 px-2">+</button>
+      </div>
+      <div class="card-body">
+        <h2 class="text-3xl">Cheesburger</h2>
+        <p>Burger mit Rindfleisch, Cheddar und Salat.</p>
+        <p class="text-right text-2xl">9.50 €</p>
+      </div>
     </div>
+  `
+}
+function getCartTemplate(){
+  return `
+    <div id="cart-body" class="flex flex-col">
+      <h2 class="text-3xl">Warenkorb</h2>
+      <div id="cart-item" class="flex "> 
+        <button>-</button><span class="p-4">2</span><button>+</button><h4 class="p-4">Cheesburger</h4><p class="py-4"><span>10</span> €</p>
+      </div>
+    </div>
+    <div id="sum-container" class="flex flex-wrap justify-between items-center">
+      <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">3.50 €</p>
+      <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">100.00 €</p>
+    </div>
+  `
+}
+function getAddressTemplate(){
+  return `
+    <address id="address-container" class="py-4">
+      <h1>Burger Factory</h1>
+      <p>Straße 12</p>
+      <p>PLZ Ort</p>
+    </address>
   `
 }
