@@ -9,26 +9,46 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
-    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="./order.js"></script>
      <script src="./template.js"></script>
 </head>
 <body onload="init()">
-  <header class="w-svw flex sticky">
-    <img src="./assets/images/pexels-komet-flicker-1015379201-20774772_neu.webp" class="bg-cover bg-center h-96" alt="">  
-    <img src="./assets/images/book0.webp" class="size-20 " alt="">
-    <h1 class=" text-4xl sm:text-5xl lg:text-7xl text-gray-300 sm:text-gray-800 pl-10 pb-10">My Bookstore</h1>
+  <header class="w-dvw flex sticky items-end justify-end bg-[url(./assets/images/pexels-komet-flicker-1015379201-20774772_neu.webp)] bg-cover bg-center h-96">
+    <img src="./assets/images/book1.webp" class="bg-cover bg-center h-20 z-30" alt="">  
   </header>
-  <main class="w-svw">
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+  <main class="w-dvw">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
-      <div id="restaurant-container" class="flex">
-        <div id="restauarants" class="flex flex-3/4">Products</div>
-        <div id="cart" class="flex flex-1/4">cart</div>
+      <div id="restaurant-container" class="flex ">
+        <div id="restauarants" class="flex flex-3/4 p-8">
+          <div class="card w-full shadow-sm p-4 border border-blue-900 rounded-2xl">
+            <div class="flex right-0 w-full">
+                <button class="border border-blue-500 rounded-xl py-1 px-2">+</button>
+              </div>
+            <div class="card-body">
+              <h2 class="text-3xl">Cheesburger</h2>
+              <p>Burger mit Rindfleisch, Cheddar und Salat.</p>
+              <p class="text-right text-2xl">9.50 €</p>
+            </div>
+          </div>
+        </div>
+        <div id="cart" class="flex flex-1/4 flex-col p-4 bg-gray-300 rounded-2xl">
+          <div id="cart-body" class="flex flex-col">
+            <h2 class="text-3xl">Warenkorb</h2>
+            <div id="cart-item" class="flex "> 
+              <button>-</button><span class="p-4">2</span> <button>+</button><h4 class="p-4">Cheesburger</h4><p class="py-4"><span>10</span> €</p>
+            </div>
+          </div>
+          <div id="sum-container" class="flex flex-wrap justify-between items-center">
+            <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">3.50 €</p>
+            <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">100.00 €</p>
+          </div>
+        </div>
       </div>
       </div>
     </div>
   </main>
-  <footer><div class="p-3">footer</div></footer>
+  <footer><div class="p-3 bg-gray-800">footer</div></footer>
 </body>
 </html>
