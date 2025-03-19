@@ -1,10 +1,10 @@
-let allRestaurants =
-  {
+{
     "restaurants": [
       {
         "name": "Pizza Paradiso",
         "address": "Hauptstraße 10, 10115 Berlin",
         "cuisine": "Italienisch",
+        "rating": 4.5,
         "menu": [
           {"dish": "Margherita", "description": "Klassische Pizza mit Tomatensauce, Mozzarella und Basilikum.", "price": 8.50, "delivery_time": "30-40 min"},
           {"dish": "Salami", "description": "Pizza mit Tomatensauce, Mozzarella und Salami.", "price": 9.50, "delivery_time": "30-40 min"},
@@ -17,6 +17,7 @@ let allRestaurants =
         "name": "Sushi World",
         "address": "Marktplatz 5, 80331 München",
         "cuisine": "Japanisch",
+        "rating": 4.7,
         "menu": [
           {"dish": "Sake Maki", "description": "Lachs-Maki-Rollen mit Sojasauce.", "price": 7.50, "delivery_time": "25-35 min"},
           {"dish": "California Roll", "description": "Inside-Out-Rolle mit Surimi, Avocado und Sesam.", "price": 9.00, "delivery_time": "30-40 min"},
@@ -29,6 +30,7 @@ let allRestaurants =
         "name": "Curry House",
         "address": "Bahnhofstraße 20, 50667 Köln",
         "cuisine": "Indisch",
+        "rating": 4.6,
         "menu": [
           {"dish": "Butter Chicken", "description": "Hähnchen in cremiger Tomatensauce.", "price": 12.50, "delivery_time": "35-45 min"},
           {"dish": "Vegetarisches Biryani", "description": "Gewürztes Reisgericht mit Gemüse.", "price": 11.00, "delivery_time": "30-40 min"},
@@ -41,6 +43,7 @@ let allRestaurants =
         "name": "Burger Factory",
         "address": "Schillerstraße 15, 60313 Frankfurt",
         "cuisine": "Amerikanisch",
+        "rating": 4.4,
         "menu": [
           {"dish": "Cheeseburger", "description": "Burger mit Rindfleisch, Cheddar und Salat.", "price": 9.50, "delivery_time": "30-40 min"},
           {"dish": "BBQ Bacon Burger", "description": "Burger mit BBQ-Sauce und knusprigem Bacon.", "price": 11.00, "delivery_time": "35-45 min"},
@@ -51,4 +54,15 @@ let allRestaurants =
       }
     ]
   }
-  
+
+  function init() {
+    getLocalStorage();
+  }
+  function restaurants(){
+    let restaurantsRef = getElementbyID('restaurants');
+    for (let indexRestaurants = 0; indexRestaurants < restaurants.length; indexRestaurants++) {
+        const element = restaurants[indexRestaurants];
+        
+        
+    }
+  }
