@@ -211,6 +211,9 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .size-80 {
     width: calc(var(--spacing) * 80);
     height: calc(var(--spacing) * 80);
@@ -218,8 +221,14 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
   .h-96 {
     height: calc(var(--spacing) * 96);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
   }
   .w-96 {
     width: calc(var(--spacing) * 96);
@@ -250,6 +259,9 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
+  }
+  .place-items-center {
+    place-items: center;
   }
   .items-center {
     align-items: center;

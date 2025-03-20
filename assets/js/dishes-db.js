@@ -22,12 +22,3 @@ let allDishes = [
       "price": 5.00, 
       "delivery_time": "25-35 min"},
 ];
-
-let cart = [
-  {
-    "dish": "Matcha Eis", 
-    "description": "Japanisches grünes Tee-Eis.", 
-    "price": 5.00, 
-    "delivery_time": "25-35 min"
-  },
-];

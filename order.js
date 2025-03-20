@@ -1,6 +1,7 @@
 function init() {
   getFromLocalStorage();
   allDishesItems(); 
+  cartIemsList();
 }
 
 function allDishesItems() {
@@ -14,12 +15,17 @@ function allDishesItems() {
 
 function cartIemsList() {
   let cartIemsListRef = document.getElementById("cart-body");
-for (let indexCart = 0; indexCart < cart.length; indexCart++) {
-  const element = array[indexCart];
-  cartIemsListRef.innerHTML += getDishesListTemplate(indexCart);
+  for (let indexCart = 0; indexCart < cart.length; indexCart++) {
+    cartIemsListRef.innerHTML += getCartTemplate(indexCart);
+
+  }
   
 }
-  
+function grandTotal(indexCart) {
+  let grandTotalRef = document.getElementById("grand-Total");
+      for (let cartItems = 0; cartItems < indexCart.length; cartItems++) {
+      }
+      grandTotalRef.innerHTML += getCartTotalTemplate(indexCart);
 }
 
 function saveToLocalStorage() {
@@ -30,5 +36,9 @@ function getFromLocalStorage() {
   let stored = JSON.parse(localStorage.getItem("dishesLocal"));
   if (stored) {
     allDishes = stored; 
+  }
+  let cartStored = JSON.parse(localStorage.getItem("cartLocal"));
+  if (cartStored) {
+    cart = stored; 
   }
 }

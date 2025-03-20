@@ -10,12 +10,13 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
     <link rel="stylesheet" href="./styles.css">
+    <script src="./assets/js/cart-db.js"></script>
     <script src="./assets/js/dishes-db.js"></script>
     <script src="./assets/js/template.js"></script>
     <script src="./order.js"></script>
 </head>
 <body onload="init()">
-  <header class="w-dvw flex sticky  z-20 items-end justify-end bg-[url(./assets/images/pexels-komet-flicker-1015379201-20774772_neu.webp)] bg-cover bg-center h-96">
+  <header class="w-dvw flex sticky z-20 items-end justify-end bg-[url(./assets/images/pexels-komet-flicker-1015379201-20774772_neu.webp)] bg-cover bg-center h-96">
     <img src="./assets/images/book1.webp" class="bg-cover bg-center h-20 z-30" alt="">  
   </header>
   <main class="w-dvw sticky z-20">
@@ -23,17 +24,11 @@
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
         <div id="restaurants-container" class="flex grow p-8 flex-col">
         </div>
-        <div id="cart" class="flex sticky z20 size-80 flex-col p-4 bg-gray-300 rounded-2xl">
+        <div id="cart-container" class="flex sticky z20 size-80 flex-col p-4 bg-gray-300 rounded-2xl">
+          <h2 class="text-3xl">Warenkorb</h2>
           <div id="cart-body" class="flex flex-col">
-            <h2 class="text-3xl">Warenkorb</h2>
-            <div id="cart-item" class="flex"> 
-              <button id="minus-dish">-</button><span class="p-4">2</span> <button id="plus-dish">+</button><h4 class="p-4">Cheesburger</h4><p class="py-4"><span>10</span> €</p>
-            </div>
           </div>
-          <div id="sum-container" class="flex flex-wrap justify-between items-center">
-            <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">3.50 €</p>
-            <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">100.00 €</p>
-          </div>
+          <div id="grand-total"></div>
         </div>
       </div>
     </div>
