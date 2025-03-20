@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bookstore</title>
+    <title>My Delivery</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96"/>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
     <link rel="stylesheet" href="./styles.css">
-    <script src="order-db.js"></script>
+    <script src="./assets/js/dishes-db.js"></script>
+    <script src="./assets/js/template.js"></script>
     <script src="./order.js"></script>
-     <script src="./template.js"></script>
 </head>
 <body onload="init()">
-  <header class="w-dvw flex sticky items-end justify-end bg-[url(./assets/images/pexels-komet-flicker-1015379201-20774772_neu.webp)] bg-cover bg-center h-96">
+  <header class="w-dvw flex sticky  z-20 items-end justify-end bg-[url(./assets/images/pexels-komet-flicker-1015379201-20774772_neu.webp)] bg-cover bg-center h-96">
     <img src="./assets/images/book1.webp" class="bg-cover bg-center h-20 z-30" alt="">  
   </header>
-  <main class="w-dvw">
-    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+  <main class="w-dvw sticky z-20">
+    <div class=" flex mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
-      <div id="restaurant-container" class="flex ">
-        <div id="restauarants" class="flex flex-3/4 p-8 flex-col">
+        <div id="restaurants-container" class="flex grow p-8 flex-col">
         </div>
-        <div id="cart" class="flex flex-1/4 flex-col p-4 bg-gray-300 rounded-2xl">
+        <div id="cart" class="flex sticky z20 size-80 flex-col p-4 bg-gray-300 rounded-2xl">
           <div id="cart-body" class="flex flex-col">
             <h2 class="text-3xl">Warenkorb</h2>
             <div id="cart-item" class="flex"> 
-              <button>-</button><span class="p-4">2</span> <button>+</button><h4 class="p-4">Cheesburger</h4><p class="py-4"><span>10</span> €</p>
+              <button id="minus-dish">-</button><span class="p-4">2</span> <button id="plus-dish">+</button><h4 class="p-4">Cheesburger</h4><p class="py-4"><span>10</span> €</p>
             </div>
           </div>
           <div id="sum-container" class="flex flex-wrap justify-between items-center">
@@ -36,7 +35,6 @@
             <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">100.00 €</p>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </main>

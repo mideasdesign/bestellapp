@@ -1,22 +1,34 @@
-  function init() {
-    getFromLocalStorage();
-    restaurants();
+function init() {
+  getFromLocalStorage();
+  allDishesItems(); 
+}
+
+function allDishesItems() {
+  let dishesRef = document.getElementById("restaurants-container");
+
+  dishesRef.innerHTML = "";
+  for (let indexDishes = 0; indexDishes < allDishes.length; indexDishes++) {  
+    dishesRef.innerHTML += getDishesListTemplate(indexDishes);
   }
-  function restaurants(){
-    let restaurantsRef = document.getElementById("restaurants");
-    for (let indexRestaurants = 0; indexRestaurants < allRestaurants.length; indexRestaurants++) {
-        restaurantsRef.innerHTML += getRestaurantsTemplate(indexRestaurants);
-        for (let indexMenu = 0; indexMenu < allRestaurants[indexRestaurants].length; indexMenu++) {
-          const element = array[index];
-          restaurantsRef.innerHTML += getRestaurantsTemplate(indexRestaurants);
-        }
-    }
-  }
-  function saveToLocalStorage() {
-    localStorage.setItem("restaurantsLocal", JSON.stringify(allRestaurants));
-  }
+}
+
+function cartIemsList() {
+  let cartIemsListRef = document.getElementById("cart-body");
+for (let indexCart = 0; indexCart < cart.length; indexCart++) {
+  const element = array[indexCart];
+  cartIemsListRef.innerHTML += getDishesListTemplate(indexCart);
   
-  function getFromLocalStorage() {
-    let stored = JSON.parse(localStorage.getItem("restaurantsLocal"));
-    if (stored) {allRestaurants = stored}
+}
+  
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem("dishesLocal", JSON.stringify(allDishes));
+}
+
+function getFromLocalStorage() {
+  let stored = JSON.parse(localStorage.getItem("dishesLocal"));
+  if (stored) {
+    allDishes = stored; 
   }
+}

@@ -196,6 +196,9 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .z-20 {
+    z-index: 20;
+  }
   .z-30 {
     z-index: 30;
   }
@@ -207,6 +210,10 @@
   }
   .flex {
     display: flex;
+  }
+  .size-80 {
+    width: calc(var(--spacing) * 80);
+    height: calc(var(--spacing) * 80);
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
@@ -231,6 +238,9 @@
   }
   .flex-3\/4 {
     flex: calc(3/4 * 100%);
+  }
+  .grow {
+    flex-grow: 1;
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
@@ -337,6 +347,13 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .hover\:cursor-pointer {
+    &:hover {
+      @media (hover: hover) {
+        cursor: pointer;
+      }
+    }
   }
   .sm\:px-6 {
     @media (width >= 40rem) {
