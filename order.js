@@ -1,12 +1,22 @@
   function init() {
-    getLocalStorage();
+    getFromLocalStorage();
     restaurants();
   }
   function restaurants(){
-    let restaurantsRef = getElementbyID('restaurants');
-    for (let indexRestaurants = 0; indexRestaurants < restaurants.length; indexRestaurants++) {
-        const element = restaurants[indexRestaurants];
-        restaurantsRef.innerHTML += getDishesTemplate(indexRestaurants);
-        
+    let restaurantsRef = document.getElementById("restaurants");
+    for (let indexRestaurants = 0; indexRestaurants < allRestaurants.length; indexRestaurants++) {
+        restaurantsRef.innerHTML += getRestaurantsTemplate(indexRestaurants);
+        for (let indexMenu = 0; indexMenu < allRestaurants[indexRestaurants].length; indexMenu++) {
+          const element = array[index];
+          restaurantsRef.innerHTML += getRestaurantsTemplate(indexRestaurants);
+        }
     }
+  }
+  function saveToLocalStorage() {
+    localStorage.setItem("restaurantsLocal", JSON.stringify(allRestaurants));
+  }
+  
+  function getFromLocalStorage() {
+    let stored = JSON.parse(localStorage.getItem("restaurantsLocal"));
+    if (stored) {allRestaurants = stored}
   }
