@@ -16,38 +16,7 @@ function getDishesListTemplate(indexDishes) {
 function getCartTemplate(indexCart){
   return `
       <div id="cart-item${[indexCart]}" class="flex"> 
-        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart[indexCart].dish}</h4><p class="py-4"><span>${cart[indexCart].total}</span> €</p>
+        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart[indexCart].dish}</h4><p class="py-4"><span>${cart[indexCart].total.toFixed(2)}</span> €</p>
       </div>
   `
 }
-
-function getAddressTemplate(indexDishes){
-  return `
-    <address id="address-container" class="py-4">
-      <h1>Burger Factory</h1>
-      <p>Straße 12</p>
-      <p>PLZ Ort</p>
-    </address>
-  `
-}
-
-function getRatingTemplate(indexDishes) {
-  return `
-    <div class="rating">
-      <div class="mask mask-star" aria-label="1 star"></div>
-      <div class="mask mask-star" aria-label="2 star"></div>
-      <div class="mask mask-star" aria-label="3 star" aria-current="true"></div>
-      <div class="mask mask-star" aria-label="4 star"></div>
-      <div class="mask mask-star" aria-label="5 star"></div>
-    </div>
-  `
-}
-
-/* function getCartTotalTemplate(indexCart) {
-  return `
-    <div id="sum-container" class="flex flex-wrap justify-between items-center">
-      <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">${cart.deliveryPrice.toFixed(2)} €</p>
-      <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">${cart.grandTotalPrice.toFixed(2)} €</p>
-    </div>
-  `
-} */

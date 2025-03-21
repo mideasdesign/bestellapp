@@ -37,18 +37,7 @@ function addDish(indexDishes) {
   };
   saveToLocalStorage();
   cartIemsList();
-}
-
-function countAmount(indexCart) {
-  let amountcountRef = document.getElementById(`count${[indexCart]}`);
-  if (cart.amount  >= 0) {
-   amountcountRef = cart[indexCart].amount = Math.max(0, cart[indexCart].amount + 1);
-  } else {
-    cart[indexCart].amount = 0;
-    };
-  saveToLocalStorage();
-  cartIemsList();
-}
+};
 
 function saveToLocalStorage() {
   localStorage.setItem("dishesLocal", JSON.stringify(allDishes));
