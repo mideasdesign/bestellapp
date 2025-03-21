@@ -2,6 +2,7 @@ function init() {
   getFromLocalStorage();
   allDishesItems(); 
   cartIemsList();
+  grandTotal();
 }
 
 function allDishesItems() {
@@ -15,17 +16,21 @@ function allDishesItems() {
 
 function addDish(indexDishes, indexCart) {
   let inputDishRef = document.getElementById(`dish${[indexDishes]}`);
-  let inputPriceRef = document.getElementById(`price${[indexDishes]}`);
-
-  cart.item[indexCart].amount++;
-  cart.item[indexCart].total += parseFloat(inputPriceRef.value);
+  cart.item[indexCart].dish = inputDishRef.innerText;
   saveToLocalStorage();
   cartIemsList();
+  grandTotal();
 }
 
 function cartIemsList() {
   let cartIemsListRef = document.getElementById("cart-body");
   cartIemsListRef.innerHTML = "";
+
+  if (cart.item.length === 0) {
+    cartIemsListRef.innerHTML = "<p>Dein Warenkorb ist leer.</p>";
+    return;
+  }
+
   for (let indexCart = 0; indexCart < cart.item.length; indexCart++) {
     cartIemsListRef.innerHTML += getCartTemplate(indexCart);
   }
@@ -37,18 +42,19 @@ function countAmount(indexCart) {
   if (amountcount  >= 0) {
     cart.item[indexCart].amount = Math.max(0, cart.item[indexCart].amount + 1);
   } else {
-    cart.item[indexCart].amount--;
+    cart.item[indexCart].amount = 0;
     }
   saveToLocalStorage();
   cartIemsList();
+  grandTotal();
 }
 
 
 function grandTotal(indexCart) {
-  let grandTotalRef = document.getElementById("grand-Total");
-      for (let cartItems = 0; cartItems < indexCart.length; cartItems++) {
+  let grandTotalRef = document.getElementById("grand-total");
+      for (let indexCartItems = 0; indexCartItems < cart.item.length; indexCartItems++) {
+        grandTotalRef.innerHTML += getCartTotalTemplate(indexCartItems);
       }
-      grandTotalRef.innerHTML += getCartTotalTemplate(indexCart);
 }
 
 function saveToLocalStorage() {
@@ -62,7 +68,7 @@ function getFromLocalStorage() {
     allDishes = stored; 
   }
   let cartStored = JSON.parse(localStorage.getItem("cartLocal"));
-  if (cartStored) {
-    cart = cartStored; 
+  if (cartStored && cartStored.item) {
+    cart = cartStored;
   }
 }
