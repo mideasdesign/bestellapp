@@ -2,7 +2,7 @@ function getDishesListTemplate(indexDishes) {
   return `
     <div class="card w-full shadow-sm my-2 p-4 border border-blue-900 rounded-2xl">
       <div class="flex right-0 w-full">
-          <button onlick="addDish(${allDishes[indexDishes]})"class="border border-blue-500 rounded-xl py-1 px-2 hover:cursor-pointer">+</button>
+          <button onclick="addDish(${indexDishes}, 0)" class="border border-blue-500 rounded-xl py-1 px-2 hover:cursor-pointer">+</button>
       </div>
       <div class="card-body">
         <h2 id="dish${[indexDishes]}" class="text-3xl">${allDishes[indexDishes].dish}</h2>
@@ -12,13 +12,15 @@ function getDishesListTemplate(indexDishes) {
     </div>
   `
 }
+
 function getCartTemplate(indexCart){
   return `
-      <div id="cart-item" class="flex "> 
-        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart[indexCart].dish}</h4><p class="py-4"><span>${cart[indexCart].total.toFixed(2)}</span> €</p>
+      <div id="cart-item${[indexCart]}" class="flex"> 
+        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart.item[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart.item[indexCart].dish}</h4><p class="py-4"><span>${cart.item[indexCart].total.toFixed(2)}</span> €</p>
       </div>
   `
 }
+
 function getAddressTemplate(indexDishes){
   return `
     <address id="address-container" class="py-4">
@@ -28,6 +30,7 @@ function getAddressTemplate(indexDishes){
     </address>
   `
 }
+
 function getRatingTemplate(indexDishes) {
   return `
     <div class="rating">
@@ -39,11 +42,12 @@ function getRatingTemplate(indexDishes) {
     </div>
   `
 }
+
 function getCartTotalTemplate(indexCart) {
   return `
     <div id="sum-container" class="flex flex-wrap justify-between items-center">
-      <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">${cart[indexCart].price.toFixed(2)} €</p>
-      <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">${cart[indexCart].grandTotalPrice.toFixed(2)} €</p>
+      <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">${cart.deliveryPrice.toFixed(2)} €</p>
+      <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">${cart.grandTotalPrice.toFixed(2)} €</p>
     </div>
   `
 }

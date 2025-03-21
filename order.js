@@ -6,25 +6,28 @@ function init() {
 
 function allDishesItems() {
   let dishesRef = document.getElementById("restaurants-container");
-
   dishesRef.innerHTML = "";
   for (let indexDishes = 0; indexDishes < allDishes.length; indexDishes++) {  
     dishesRef.innerHTML += getDishesListTemplate(indexDishes);
   }
 }
 
-function addDishes(indexDishes) {
-  let dishItem = allDishes[indexDishes].dish;
-  cart[indexCart].dish.push(dishItem);
+
+function addDish(indexDishes, indexCart) {
+  let inputDishRef = document.getElementById(`dish${[indexDishes]}`);
+  let inputPriceRef = document.getElementById(`price${[indexDishes]}`);
+
+  cart.item[indexCart].amount++;
+  cart.item[indexCart].total += parseFloat(inputPriceRef.value);
   saveToLocalStorage();
   cartIemsList();
 }
 
 function cartIemsList() {
   let cartIemsListRef = document.getElementById("cart-body");
-  for (let indexCart = 0; indexCart < cart.length; indexCart++) {
+  cartIemsListRef.innerHTML = "";
+  for (let indexCart = 0; indexCart < cart.item.length; indexCart++) {
     cartIemsListRef.innerHTML += getCartTemplate(indexCart);
-
   }
 }
 
@@ -32,9 +35,9 @@ function countAmount(indexCart) {
   let amountcountRef = document.getElementById(`count${[indexCart]}`);
   let amountcount = amountcountRef.value;
   if (amountcount  >= 0) {
-    cart[indexCart].amount = 0;
+    cart.item[indexCart].amount = Math.max(0, cart.item[indexCart].amount + 1);
   } else {
-    cart[indexCart].amount++;
+    cart.item[indexCart].amount--;
     }
   saveToLocalStorage();
   cartIemsList();
@@ -50,6 +53,7 @@ function grandTotal(indexCart) {
 
 function saveToLocalStorage() {
   localStorage.setItem("dishesLocal", JSON.stringify(allDishes));
+  localStorage.setItem("cartLocal", JSON.stringify(cart));
 }
 
 function getFromLocalStorage() {
@@ -59,6 +63,6 @@ function getFromLocalStorage() {
   }
   let cartStored = JSON.parse(localStorage.getItem("cartLocal"));
   if (cartStored) {
-    cart = stored; 
+    cart = cartStored; 
   }
 }

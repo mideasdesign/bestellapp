@@ -20,5 +20,6 @@ let allDishes = [
       "dish": "Matcha Eis", 
       "description": "Japanisches grünes Tee-Eis.", 
       "price": 5.00, 
-      "delivery_time": "25-35 min"},
+      "delivery_time": "25-35 min"
+    },
 ];
