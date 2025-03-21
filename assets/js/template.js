@@ -16,7 +16,7 @@ function getDishesListTemplate(indexDishes) {
 function getCartTemplate(indexCart){
   return `
       <div id="cart-item${[indexCart]}" class="flex"> 
-        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart.item[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart.item[indexCart].dish}</h4><p class="py-4"><span>${cart.item[indexCart].total.toFixed(2)}</span> €</p>
+        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart.amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart.dish}</h4><p class="py-4"><span>${cart.total.toFixed(2)}</span> €</p>
       </div>
   `
 }
@@ -43,11 +43,11 @@ function getRatingTemplate(indexDishes) {
   `
 }
 
-function getCartTotalTemplate(indexCart) {
+/* function getCartTotalTemplate(indexCart) {
   return `
     <div id="sum-container" class="flex flex-wrap justify-between items-center">
       <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">${cart.deliveryPrice.toFixed(2)} €</p>
       <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">${cart.grandTotalPrice.toFixed(2)} €</p>
     </div>
   `
-}
+} */
