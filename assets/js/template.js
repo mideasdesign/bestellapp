@@ -16,7 +16,7 @@ function getDishesListTemplate(indexDishes) {
 function getCartTemplate(indexCart){
   return `
       <div id="cart-item${[indexCart]}" class="flex"> 
-        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart.amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart.dish}</h4><p class="py-4"><span>${cart.total.toFixed(2)}</span> €</p>
+        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart[indexCart].dish}</h4><p class="py-4"><span>${cart[indexCart].total}</span> €</p>
       </div>
   `
 }

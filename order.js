@@ -14,31 +14,30 @@ function allDishesItems() {
 
 function cartIemsList() {
   let cartIemsListRef = document.getElementById('cart-body');
+  cartIemsListRef.innerHTML = "";
   for (let indexCart = 0; indexCart < cart.length; indexCart++) {
     cartIemsListRef.innerHTML += getCartTemplate(indexCart);
   }
-}
+};
 
-
-function addDish(indexDishes, indexCart) {
+function addDish(indexDishes) {
   let inputDishRef = allDishes[indexDishes].dish;
   let inputPriceRef = allDishes[indexDishes].price;
-  if (allDishes[indexDishes].dish == cart.dish) {
-    let newItem = cart.amount++;
-    cart.push(newItem);
-  }
-  else{
+  let dishExist = cart.find(item => item.dish === inputDishRef);
+  if (dishExist) {
+    dishExist .amount++;
+    dishExist .total += inputPriceRef;
+  } else {
     let newItem = {
-    dish: inputDishRef,
-    total: inputPriceRef,
-    amount: 1
+      dish: inputDishRef,
+      total: inputPriceRef,
+      amount: 1
     };
     cart.push(newItem);
   };
   saveToLocalStorage();
   cartIemsList();
-  grandTotal();
-};
+}
 
 function countAmount(indexCart) {
   let amountcountRef = document.getElementById(`count${[indexCart]}`);
@@ -46,18 +45,9 @@ function countAmount(indexCart) {
    amountcountRef = cart[indexCart].amount = Math.max(0, cart[indexCart].amount + 1);
   } else {
     cart[indexCart].amount = 0;
-    }
+    };
   saveToLocalStorage();
   cartIemsList();
-  grandTotal();
-}
-
-
-function grandTotal(indexCart) {
-  let grandTotalRef = document.getElementById("grand-total");
-      for (let indexCartItems = 0; indexCartItems < cart.length; indexCartItems++) {
-        grandTotalRef.innerHTML += getCartTotalTemplate(indexCartItems);
-      }
 }
 
 function saveToLocalStorage() {
