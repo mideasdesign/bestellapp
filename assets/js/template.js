@@ -7,16 +7,32 @@ function getDishesListTemplate(indexDishes) {
       <div class="card-body">
         <h2 id="dish${[indexDishes]}" class="text-3xl">${allDishes[indexDishes].dish}</h2>
         <p id="desc${[indexDishes]}">${allDishes[indexDishes].description}</p>
-        <p id="price${[indexDishes]}" class="text-right text-2xl">${allDishes[indexDishes].price.toFixed(2)}</p>
+        <p id="price${[indexDishes]}" class="text-right text-2xl">${allDishes[indexDishes].price}</p>
       </div>
     </div>
   `
 }
 
 function getCartTemplate(indexCart){
-  return `
-      <div id="cart-item${[indexCart]}" class="flex"> 
-        <button class="hover:cursor-pointer">-</button><span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span><button class="hover:cursor-pointer">+</button><h4 class="p-4">${cart[indexCart].dish}</h4><p class="py-4"><span>${cart[indexCart].total.toFixed(2)}</span> €</p>
+  return /* html */`
+    <div id="cart-item${[indexCart]}" class="grid grid-cols-4 gap-3 content-center"> 
+      <div class="content-center">
+        <button class="hover:cursor-pointer">-</button>
+        <span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span>
+        <button class="hover:cursor-pointer">+</button>
       </div>
+      <h4 class="p-4 col-span-2">${cart[indexCart].dish}</h4>
+      <p class="py-4 text-right"><span>${cart[indexCart].total}</span> €</p>
+    </div>
   `
+};
+
+function grandTotal(indexCart){
+  return /* html */`
+    <div id="sum-container" class="grid grid-3">
+      <h4 class="text-xl col-span-2">Lieferkosten:</h4><p class="text-xl text-right">${3.50.toFixed(2)} €</p>
+      <h4 class="text-xl col-span-2">Gesamtkosten:</h4><p class="text-xl text-right">${grandTotal.toFixed(2)} €</p>
+    </div>
+  `
+
 }

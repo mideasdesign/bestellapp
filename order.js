@@ -2,6 +2,7 @@ function init() {
   getFromLocalStorage();
   allDishesItems(); 
   cartIemsList();
+  grandTotal();
 };
 
 function allDishesItems() {
@@ -37,6 +38,7 @@ function addDish(indexDishes) {
   };
   saveToLocalStorage();
   cartIemsList();
+  grandTotal();
 };
 
 function saveToLocalStorage() {
@@ -53,4 +55,24 @@ function getFromLocalStorage() {
   if (cartStored && cartStored) {
     cart = cartStored;
   }
+}
+
+function grandTotal(indexCart) {
+  let grandTotalRef = document.getElementById("grand-total");
+  let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
+  let grandTotal = totalSum + 3.50; 
+  let grandTotalPrice = {
+      grandTotal: grandTotal,
+  }
+  cart.grandTotalPrice = grandTotalPrice;
+
+  // Aktualisiert die Anzeige
+  grandTotalRef.innerHTML = `
+    <div id="sum-container" class="flex flex-wrap justify-between items-center">
+      <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">${3.50.toFixed(2)} €</p>
+      <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">${grandTotal.toFixed(2)} €</p>
+    </div>
+  `;
+  saveToLocalStorage();
+  cartIemsList();
 }
