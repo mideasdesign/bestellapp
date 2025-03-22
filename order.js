@@ -59,20 +59,12 @@ function getFromLocalStorage() {
 
 function grandTotal(indexCart) {
   let grandTotalRef = document.getElementById("grand-total");
+      grandTotalRef.innerHTML = "";
   let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
   let grandTotal = totalSum + 3.50; 
-  let grandTotalPrice = {
-      grandTotal: grandTotal,
-  }
-  cart.grandTotalPrice = grandTotalPrice;
+  cart.grandTotalPrice = grandTotal;
 
-  // Aktualisiert die Anzeige
-  grandTotalRef.innerHTML = `
-    <div id="sum-container" class="flex flex-wrap justify-between items-center">
-      <h4 class="text-xl">Lieferkosten:</h4><p class="text-xl">${3.50.toFixed(2)} €</p>
-      <h4 class="text-xl">Gesamtkosten:</h4><p class="text-xl">${grandTotal.toFixed(2)} €</p>
-    </div>
-  `;
+  grandTotalRef.innerHTML += getGrandTotalTemplate(indexCart);
   saveToLocalStorage();
   cartIemsList();
 }
