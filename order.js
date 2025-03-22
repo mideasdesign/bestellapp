@@ -57,14 +57,33 @@ function getFromLocalStorage() {
   }
 }
 
-function grandTotal(indexCart) {
+function grandTotal() {
   let grandTotalRef = document.getElementById("grand-total");
-      grandTotalRef.innerHTML = "";
+  grandTotalRef.innerHTML = "";
   let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
-  let grandTotal = totalSum + 3.50; 
-  cart.grandTotalPrice = grandTotal;
+  let grandTotal = totalSum + 3.50;
 
-  grandTotalRef.innerHTML += getGrandTotalTemplate(indexCart);
+  grandTotalRef.innerHTML += getGrandTotalTemplate(grandTotal);
   saveToLocalStorage();
   cartIemsList();
+}
+
+function amountPlus(indexCart) {
+  cart[indexCart].amount++;
+  cart[indexCart].total += cart[indexCart].total / (cart[indexCart].amount - 1); 
+  saveToLocalStorage();
+  cartIemsList();
+  grandTotal();
+}
+
+function amountMinus(indexCart) {
+  if (cart[indexCart].amount > 1) {
+    cart[indexCart].total -= cart[indexCart].total / cart[indexCart].amount; 
+    cart[indexCart].amount--;
+  } else {
+    cart.splice(indexCart, 1);
+  }
+  saveToLocalStorage();
+  cartIemsList();
+  grandTotal();
 }

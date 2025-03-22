@@ -17,9 +17,9 @@ function getCartTemplate(indexCart){
   return /* html */`
     <div id="cart-item${[indexCart]}" class="grid grid-cols-4 gap-3 content-center"> 
       <div class="content-center">
-        <button class="hover:cursor-pointer">-</button>
+        <button onclick="amountMinus(${[indexCart]})" class="hover:cursor-pointer">-</button>
         <span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span>
-        <button class="hover:cursor-pointer">+</button>
+        <button onclick="amountPlus(${[indexCart]})" class="hover:cursor-pointer">+</button>
       </div>
       <h4 class="p-2 col-span-2">${cart[indexCart].dish}</h4>
       <p class="py-2 text-right"><span>${cart[indexCart].total.toFixed(2)}</span> €</p>
@@ -27,11 +27,11 @@ function getCartTemplate(indexCart){
   `
 };
 
-function getGrandTotalTemplate(indexCart){
+function getGrandTotalTemplate(grandTotal){
   return /* html */`
     <div id="sum-container" class="grid grid-cols-3 gap-3 mt-5">
       <h4 class="text-lg col-span-2">Lieferkosten:</h4><p class="text-xl text-right">${3.50.toFixed(2)} €</p>
-      <h4 class="text-lg col-span-2">Gesamtkosten:</h4><p class="text-xl text-right">${cart.grandTotalPrice.toFixed(2)} €</p>
+      <h4 class="text-lg col-span-2">Gesamtkosten:</h4><p class="text-xl text-right">${grandTotal.toFixed(2)} €</p>
     </div>
   `
 }
