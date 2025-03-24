@@ -7,9 +7,9 @@ function getDishesListTemplate(indexDishes) {
       <button onclick="addDish(${indexDishes})" class="indicator text-2xl text-right rounded-xl py-1 px-4 hover:cursor-pointer btn text-gray-100">+</button>
       </div>
       <div class="h-40 p-4 rounded-lg flex flex-col justify-end">
-        <h2 id="dish${indexDishes}" class="text-3xl text-gray-100">${allDishes[indexDishes].dish}</h2>
+        <h2 id="dish${indexDishes}" class="text-xl text-gray-100">${allDishes[indexDishes].dish}</h2>
         <p id="desc${indexDishes}" class="text-gray-100">${allDishes[indexDishes].description}</p>
-        <p id="price${indexDishes}" class="text-right text-3xl text-gray-100">${allDishes[indexDishes].price.toFixed(2)} €</p>
+        <p id="price${indexDishes}" class="text-right text-xl text-gray-100">${allDishes[indexDishes].price.toFixed(2)} €</p>
       </div>
     </div>
   `
@@ -35,6 +35,15 @@ function getGrandTotalTemplate(grandTotal){
     <div id="sum-container" class="grid grid-cols-3 gap-3 mt-5">
       <h4 class="text-lg col-span-2">Lieferkosten:</h4><p class="text-xl text-right">${3.50.toFixed(2)} €</p>
       <h4 class="text-lg col-span-2">Gesamtkosten:</h4><p class="text-xl text-right">${grandTotal.toFixed(2)} €</p>
+      <button onclick="orderDishes()" class="rounded-2xl text-m mt-4 uppercase text-white cart-btn w-full shadow-sm my-2 p-4 col-span-3 hover:cursor-pointer">jetzt bestellen</button>
+    </div>
+  `
+}
+function getGrandTotalMobile(grandTotal){
+  return /* html */`
+    <div id="sum-container" class="grid grid-cols-3 gap-3 mt-5">
+      <h4 class="text-lg col-span-2">Lieferkosten:</h4><p class="text-l text-right">${3.50.toFixed(2)} €</p>
+      <h4 class="text-lg col-span-2">Gesamtkosten:</h4><p class="text-l text-right">${grandTotal.toFixed(2)} €</p>
       <button onclick="orderDishes()" class="rounded-2xl text-m mt-4 uppercase text-white cart-btn w-full shadow-sm my-2 p-4 col-span-3 hover:cursor-pointer">jetzt bestellen</button>
     </div>
   `
