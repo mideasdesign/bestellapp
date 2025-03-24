@@ -50,3 +50,13 @@ ol[role='list']{
     position: sticky;
     top:0;
   }
+  .cart-bg{
+    background-color: #D0C7BA;
+  }
+  .cart-btn{
+    background: #5B4F3E;
+  }
+  .cart-btn:hover{
+    background:transparent;
+    border: 1px solid #5B4F3E;
+  }
