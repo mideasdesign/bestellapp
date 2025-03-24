@@ -60,3 +60,10 @@ ol[role='list']{
     background:transparent;
     border: 1px solid #5B4F3E;
   }
+  .indicator{
+    background: #5B4F3E;
+  }
+  .indicator-container{
+    margin-top: -16px;
+    z-index: 40;
+  }
