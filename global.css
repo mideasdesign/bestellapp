@@ -31,3 +31,22 @@ ol[role='list']{
 .container-width{
     max-width:1440px;
 }
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #242424b6;
+  }
+  .close {
+    display: none;
+  }
+ .sticky-order{
+    position:sticky ;
+    top:450px;
+  }
+  .sticky-header{
+    position: sticky;
+    top:0;
+  }

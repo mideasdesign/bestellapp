@@ -33,6 +33,7 @@ function getGrandTotalTemplate(grandTotal){
     <div id="sum-container" class="grid grid-cols-3 gap-3 mt-5">
       <h4 class="text-lg col-span-2">Lieferkosten:</h4><p class="text-xl text-right">${3.50.toFixed(2)} €</p>
       <h4 class="text-lg col-span-2">Gesamtkosten:</h4><p class="text-xl text-right">${grandTotal.toFixed(2)} €</p>
+      <button onclick="orderDishes()" class="rounded-2xl text-m mt-4 uppercase text-white bg-red-700 w-full shadow-sm my-2 p-4 col-span-3 hover:cursor-pointer">jetzt bestellen</button>
     </div>
   `
 }

@@ -21,7 +21,7 @@ function allDishesItems() {
 };
 
 function cartIemsList() {
-  let cartIemsListRef = document.getElementById('cart-body');
+  let cartIemsListRef = document.getElementById('cart-items');
   cartIemsListRef.innerHTML = "";
   for (let indexCart = 0; indexCart < cart.length; indexCart++) {
     cartIemsListRef.innerHTML += getCartTemplate(indexCart);
@@ -88,8 +88,20 @@ function amountMinus(indexCart) {
   };
   renderAll();
 }
+
 function toTrash(indexCart){
   cart.splice(indexCart, 1);
   localStorage.removeItem("cartLocal");
   renderAll();
+}
+
+function orderDishes() {
+  localStorage.clear();
+  modalOverlay();
+  renderAll();
+};
+
+function modalOverlay(event){
+  let toggleRef = document.getElementById('order-modal')
+  toggleRef.classList.toggle('close');
 }
