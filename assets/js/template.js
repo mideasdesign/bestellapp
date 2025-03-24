@@ -15,8 +15,9 @@ function getDishesListTemplate(indexDishes) {
 
 function getCartTemplate(indexCart){
   return /* html */`
-    <div id="cart-item${[indexCart]}" class="grid grid-cols-4 gap-3 content-center"> 
-      <div class="content-center">
+    <div id="cart-item${[indexCart]}" class="grid grid-cols-5 gap-3 content-center"> 
+      <div class="content-center col-span-2">
+      <button id="trash${[indexCart]}" onclick="toTrash(${[indexCart]})" class="pr-5"><img src="./assets/icon/trash.svg" alt="delete dish" class="h-4 w-auto hover:cursor-pointer"></button>
         <button onclick="amountMinus(${[indexCart]})" class="hover:cursor-pointer">-</button>
         <span id="count${[indexCart]}" class="p-4">${cart[indexCart].amount}</span>
         <button onclick="amountPlus(${[indexCart]})" class="hover:cursor-pointer">+</button>

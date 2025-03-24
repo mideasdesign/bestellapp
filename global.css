@@ -28,3 +28,6 @@ ol[role='list']{
     margin:0;
     padding:0;
 }
+.container-width{
+    max-width:1440px;
+}

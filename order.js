@@ -5,6 +5,13 @@ function init() {
   grandTotal();
 };
 
+function renderAll() {
+  saveToLocalStorage();
+  cartIemsList();
+  grandTotal();
+};
+
+
 function allDishesItems() {
   let dishesRef = document.getElementById("restaurants-container");
   dishesRef.innerHTML = "";
@@ -36,9 +43,7 @@ function addDish(indexDishes) {
     };
     cart.push(newItem);
   };
-  saveToLocalStorage();
-  cartIemsList();
-  grandTotal();
+  renderAll();
 };
 
 function saveToLocalStorage() {
@@ -71,9 +76,7 @@ function grandTotal() {
 function amountPlus(indexCart) {
   cart[indexCart].amount++;
   cart[indexCart].total += cart[indexCart].total / (cart[indexCart].amount - 1); 
-  saveToLocalStorage();
-  cartIemsList();
-  grandTotal();
+  renderAll();
 }
 
 function amountMinus(indexCart) {
@@ -82,8 +85,11 @@ function amountMinus(indexCart) {
     cart[indexCart].amount--;
   } else {
     cart.splice(indexCart, 1);
-  }
-  saveToLocalStorage();
-  cartIemsList();
-  grandTotal();
+  };
+  renderAll();
+}
+function toTrash(indexCart){
+  cart.splice(indexCart, 1);
+  localStorage.removeItem("cartLocal");
+  renderAll();
 }
