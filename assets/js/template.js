@@ -1,15 +1,17 @@
 function getDishesListTemplate(indexDishes) {
+  let imageUrl = allDishes[indexDishes].img || allDishes[indexDishes].images || './assets/images/default.webp';
   return `
-    <div class="card w-full shadow-sm my-2 p-4 border border-blue-900 rounded-2xl">
-      <div class="flex right-0 w-full">
-          <button onclick="addDish(${indexDishes})" class="border border-blue-500 rounded-xl py-1 px-2 hover:cursor-pointer">+</button>
+      <div class="card w-full shadow-sm my-2 p-4 border border-red-400 rounded-2xl"
+           style="background-image: url('${imageUrl}'); background-size: cover; background-position: center; background-color: rgba(0,0,0,0.3); background-blend-mode: darken;">
+        <div class="flex right-0 w-full">
+            <button onclick="addDish(${indexDishes})" class="border border-blue-500 rounded-xl py-1 px-2 hover:cursor-pointer">+</button>
+        </div>
+        <div class=" py-6 px-2 rounded-lg">
+          <h2 id="dish${indexDishes}" class="text-3xl text-gray-100">${allDishes[indexDishes].dish}</h2>
+          <p id="desc${indexDishes}" class="text-gray-100">${allDishes[indexDishes].description}</p>
+          <p id="price${indexDishes}" class="text-right text-2xl text-gray-100">${allDishes[indexDishes].price.toFixed(2)} €</p>
+        </div>
       </div>
-      <div class="card-body">
-        <h2 id="dish${[indexDishes]}" class="text-3xl">${allDishes[indexDishes].dish}</h2>
-        <p id="desc${[indexDishes]}">${allDishes[indexDishes].description}</p>
-        <p id="price${[indexDishes]}" class="text-right text-2xl">${allDishes[indexDishes].price.toFixed(2)}</p>
-      </div>
-    </div>
   `
 }
 

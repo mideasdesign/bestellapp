@@ -16,6 +16,7 @@ function allDishesItems() {
   dishesRef.innerHTML = "";
   for (let indexDishes = 0; indexDishes < allDishes.length; indexDishes++) {  
     dishesRef.innerHTML += getDishesListTemplate(indexDishes);
+    console.log(allDishes[indexDishes]);
   }
 };
 
