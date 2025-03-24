@@ -11,9 +11,8 @@ function renderAll() {
   grandTotal();
 };
 
-
 function allDishesItems() {
-  let dishesRef = document.getElementById("restaurants-container");
+  let dishesRef = document.getElementById("restaurants");
   dishesRef.innerHTML = "";
   for (let indexDishes = 0; indexDishes < allDishes.length; indexDishes++) {  
     dishesRef.innerHTML += getDishesListTemplate(indexDishes);
@@ -67,7 +66,6 @@ function grandTotal() {
   grandTotalRef.innerHTML = "";
   let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
   let grandTotal = totalSum + 3.50;
-
   grandTotalRef.innerHTML += getGrandTotalTemplate(grandTotal);
   saveToLocalStorage();
   cartIemsList();
@@ -98,7 +96,7 @@ function toTrash(indexCart){
 function orderDishes() {
   localStorage.clear();
   modalOverlay();
-  renderAll();
+  location.reload();
 };
 
 function modalOverlay(event){
