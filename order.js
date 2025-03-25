@@ -97,10 +97,12 @@ function toTrash(indexCart){
 function orderDishes() {
   localStorage.clear();
   modalOverlay();
-  location.reload();
 };
 
 function modalOverlay(event){
   let toggleRef = document.getElementById('order-modal')
   toggleRef.classList.toggle('close');
+}
+function pageReload() {
+  location.reload();
 }
