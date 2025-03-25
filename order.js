@@ -3,6 +3,7 @@ function init() {
   allDishesItems(); 
   cartIemsList();
   grandTotal();
+  MiniIndicator();
 };
 
 function renderAll() {
@@ -103,6 +104,19 @@ function modalOverlay(event){
   let toggleRef = document.getElementById('order-modal')
   toggleRef.classList.toggle('close');
 }
-function pageReload() {
+
+function shopping(event){
+  let toggleRef = document.getElementById('cart-container')
+  toggleRef.classList.toggle('close-cart');
+}
+
+function MiniIndicator(indexCart) {
+  let indicator = document.getElementById('mini-indicator');
+  let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
+  let grandTotal = totalSum + 3.50;
+  indicator.innerHTML += getMiniIndicatorTemplate(grandTotal);
+}
+
+function reloadPage() {
   location.reload();
 }

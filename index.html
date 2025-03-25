@@ -16,33 +16,47 @@
     <script src="./order.js"></script>
 </head>
 <body onload="init()">
-  <header class="w-dvw flex justify-center fixed items-center z-10 bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-[25vh] md:h-96 sticky-header">
-    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-30 z-30 translate-y-[11vh] md:translate-y-45" alt="">  
-  </header>
-  <div id="order-modal" onclick="pageReload(event)" class=" w-full h-full z-50 px-4 flex justify-center items-center close">
-      <div id="modal-content" class="overlay px-5 flex justify-center  z-50 items-center w-full h-auto">
-        <div onclick="event.stopPropagation()" class="flex flex-col w-full h-auto justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
-            <h3 id="description-header" class="text-l h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
+  <header class="w-full flex justify-center items-center bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-[15vh] sm:h-[30vh] sticky-header">
+    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-[10vh] z-30 translate-y-13 sm:translate-y-45" alt="">  
+    <div id="order-modal" onclick="reloadPage(event)" class=" w-full px-4 h-dvh flex justify-center items-center close">
+      <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
+        <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
+            <h3 id="description-header" class="text-xl h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
         </div>
       </div>
     </div>
+  </header>
   <main class="w-full">
-    <div class=" flex mx-auto sm:flex-col container-width px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <div class=" flex mx-auto container-width px-4 sm:px-6 sm:py-24 lg:px-8">
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
-        <div id="restaurants-container" class="flex md:grow p4 sm:p-8 flex-col">
-          <div id="restaurants" class="flex flex-col w-full"></div>
+        <div id="restaurants-container" class="flex sm:grow flex-col mt-10">
+          <div class="w-full">
+            <address>
+              <h1 class="sm:text-xl text-lg primary-color">Sushi Heaven</h1>
+              <p>Marktplatz 5, 80331 München</p>
+            </address>
+            <p>330 bewertungen</p>
+            <div class="flex">
+              <img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen">
+            </div>
 
-        </div>
-        <div id="cart-container" class="flex fixed  sm:relative bottom-0 w-96 md:flex-col">
-          <div id="cart-body" class="flex flex-col mt-4 p-4 cart-bg rounded-2xl sm:sticky-order">
-            <h2 class="text-xl pt-6 flex">Warenkorb</h2>
-            <div id="cart-items" class="flex w-full"></div>
-            <div id="grand-total" class="flex md:flex-col"></div>
           </div>
+          <div id="restaurants"></div>
+        </div>
+        <div id="cart-container" class="flex w-72 sm:w-96 flex-col mobile-cart sm:ml-7 close-cart">
+          <div id="cart-body" class="flex flex-col  mt-4 p-4 cart-bg rounded-2xl sm:top:[30vh] sticky-order">
+            <h2 class="text-xl sm:text-3xl pt-6">Warenkorb</h2>
+            <div id="cart-items" class=""></div>
+            <div id="grand-total" class="flex flex-col"></div>
+          </div>
+        </div>
+        <div class="z-20 w-72 fixed bottom-2">
+          <button onclick="orderDishes()" class="sm:hidden rounded-2xl text-sm mt-1 uppercase text-white cart-btn w-full shadow-sm p-3 hover:cursor-pointer">jetzt bestellen</button>
+          <button onclick="shopping()" class="sm:hidden rounded-2xl text-sm mt-2 uppercase text-white cart-btn w-full shadow-sm  p-3  hover:cursor-pointer"><span id="mini-indicator" class="text-sm"></span></button>
         </div>
       </div>
     </div>
   </main>
-  <footer><div class="p-7 primary-color">copyright© 2025 sukram</div></footer>
+  <footer><div class="p-3 bg-gray-800">footer</div></footer>
 </body>
 </html>
