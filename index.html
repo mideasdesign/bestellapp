@@ -17,32 +17,26 @@
 </head>
 <body onload="init()">
   <header class="w-dvw flex justify-center fixed items-center z-10 bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-[25vh] md:h-96 sticky-header">
-    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-30 z-60 translate-y-[11vh] md:translate-y-45" alt="">  
+    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-30 z-30 translate-y-[11vh] md:translate-y-45" alt="">  
   </header>
-  <main class="w-full">
-    <div id="order-modal" onclick="pageReload(event)" class=" w-full h-full z-80 px-4 flex justify-center items-center close">
-      <div id="modal-content" class="overlay z-40 px-5 flex justify-center items-center w-full">
-        <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
-            <h3 id="description-header" class="text-xl h-14 md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
+  <div id="order-modal" onclick="pageReload(event)" class=" w-full h-full z-50 px-4 flex justify-center items-center close">
+      <div id="modal-content" class="overlay px-5 flex justify-center  z-50 items-center w-full h-auto">
+        <div onclick="event.stopPropagation()" class="flex flex-col w-full h-auto justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
+            <h3 id="description-header" class="text-l h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
         </div>
       </div>
     </div>
-    <div class=" flex flex-wrap mx-auto container-width px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+  <main class="w-full">
+    <div class=" flex mx-auto sm:flex-col container-width px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
-      <div class="flex flex-nowrap w-full">
-        <address>
-          <h1 class="text-3xl primary-color">Sushi Heaven</h1>
-          <p class="text-xl primary-color">Marktplatz 5, 80331 München</p>
-        </address>
-      </div>
-        <div id="restaurants-container" class="flex flex-row md:grow p4 sm:p-8 md:flex-col">
-          <div id="restaurants" class="flex flex-1 flex-wrap"></div>
+        <div id="restaurants-container" class="flex md:grow p4 sm:p-8 flex-col">
+          <div id="restaurants" class="flex flex-col w-full"></div>
 
         </div>
-        <div id="cart-container" class="flex  fixed bottom-0 w-dvw sm:w-96 md:flex-col">
+        <div id="cart-container" class="flex fixed  sm:relative bottom-0 w-96 md:flex-col">
           <div id="cart-body" class="flex flex-col mt-4 p-4 cart-bg rounded-2xl sm:sticky-order">
-            <h2 class="text-xl pt-6">Warenkorb</h2>
-            <div id="cart-items"></div>
+            <h2 class="text-xl pt-6 flex">Warenkorb</h2>
+            <div id="cart-items" class="flex w-full"></div>
             <div id="grand-total" class="flex md:flex-col"></div>
           </div>
         </div>
