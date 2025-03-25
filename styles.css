@@ -286,8 +286,20 @@
   .w-full {
     width: 100%;
   }
+<<<<<<< Updated upstream
   .grow {
     flex-grow: 1;
+=======
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .translate-y-13 {
+    --tw-translate-y: calc(var(--spacing) * 13);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+>>>>>>> Stashed changes
   }
   .translate-y-\[11vh\] {
     --tw-translate-y: 11vh;
