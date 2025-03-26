@@ -1,14 +1,14 @@
 function init() {
   getFromLocalStorage();
   allDishesItems(); 
-cartItemsList();
+  cartItemsList();
   grandTotal();
-  MiniIndicator();
+  miniIndicator();
 };
 
 function renderAll() {
   saveToLocalStorage();
-cartItemsList();
+  cartItemsList();
   grandTotal();
 };
 

@@ -21,18 +21,18 @@
       <img src="./assets/images/logo.svg" class="h-7 flex" alt=""> <h3 class="flex text-xl text-gray-800 px-4">My Delivery</h3> 
     </div>
   </header>
-  <main class="w-full h-full">
-    <div  class="w-full flex justify-center items-center bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-72 sticky-header">
-      <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-20 sm:h-35 z-20 translate-y-17 sm:translate-y-35" alt="">  
-      <div id="order-modal" onclick="reloadPage(event)" class=" w-full px-4 h- flex justify-center items-center close">
-        <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
-          <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
-            <h3 id="description-header" class="text-xl h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
-          </div>
+  <div  class="w-full flex justify-center items-center bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-72 sticky-header">
+    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-20 sm:h-35 z-20 translate-y-17 sm:translate-y-35" alt="">  
+    <div id="order-modal" onclick="reloadPage(event)" class=" w-full z-50 px-4 h-full fixed top-0 flex justify-center items-center close">
+      <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
+        <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
+          <h3 id="description-header" class="text-xl h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
         </div>
       </div>
     </div>
-    <div class=" flex mx-auto container-width px-4 sm:px-6 lg:px-8">
+  </div>
+  <main class="w-full h-full">
+    <div class=" flex container-width px-4 sm:px-6 lg:px-8">
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
         <div id="restaurants-container" class="flex sm:grow flex-col mt-12 sm:mt-10">
           <div class="w-full">
@@ -47,11 +47,11 @@
           </div>
           <div id="restaurants" class="block py-10"></div>
         </div>
-        <div id="cart-container" class="block rounded sm:flex w-72 z-40 md:w-[400px] flex-col fixed sm:sticky top-36  sm:h-100vh cart-bg sm:ml-7 close-cart">
-          <div id="cart-body" class="flex flex-col z-40 mt-4 p-4 fixed sm:sticky top-36 sm:top-0">
+        <div id="cart-container" class="flex sm:flex z-40 md:w-[400px] flex-col fixed sm:sticky top-36  sm:h-100vh bg-[#D0C7BA] sm:ml-7 close-cart">
+          <div id="cart-body" class="flex flex-col z-40 w-[95%] mt-4 p-4 fixed sm:sticky top-30 sm:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
             <h2 class="text-xl sm:text-3xl pt-4 sm:pt-6">Warenkorb</h2>
             <div id="cart-items" class=""></div>
-            <div id="grand-total" class="flex flex-col"></div>
+            <div id="grand-total" class="flex flex-col"></div> 
           </div>
         </div>
       </div>
