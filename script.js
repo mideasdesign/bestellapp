@@ -1,14 +1,14 @@
 function init() {
   getFromLocalStorage();
   allDishesItems(); 
-  cartIemsList();
+cartItemsList();
   grandTotal();
   MiniIndicator();
 };
 
 function renderAll() {
   saveToLocalStorage();
-  cartIemsList();
+cartItemsList();
   grandTotal();
 };
 
@@ -20,11 +20,11 @@ function allDishesItems() {
   }
 };
 
-function cartIemsList() {
-  let cartIemsListRef = document.getElementById('cart-items');
-  cartIemsListRef.innerHTML = "";
+function cartItemsList() {
+  let cartItemsListRef = document.getElementById('cart-items');
+cartItemsListRef.innerHTML = "";
   for (let indexCart = 0; indexCart < cart.length; indexCart++) {
-    cartIemsListRef.innerHTML += getCartTemplate(indexCart);
+  cartItemsListRef.innerHTML += getCartTemplate(indexCart);
   }
 };
 
@@ -69,7 +69,7 @@ function grandTotal() {
   let grandTotal = totalSum + 3.50;
   grandTotalRef.innerHTML += getGrandTotalTemplate(grandTotal);
   saveToLocalStorage();
-  cartIemsList();
+cartItemsList();
 }
 
 function amountPlus(indexCart) {
@@ -109,7 +109,7 @@ function shopping(event){
   toggleRef.classList.toggle('close-cart');
 }
 
-function MiniIndicator(indexCart) {
+function miniIndicator(indexCart) {
   let indicator = document.getElementById('mini-indicator');
   let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
   let grandTotal = totalSum + 3.50;

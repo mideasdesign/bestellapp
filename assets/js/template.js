@@ -17,15 +17,17 @@ function getDishesListTemplate(indexDishes) {
 
 function getCartTemplate(indexCart){
   return /* html */`
-    <div id="cart-item${[indexCart]}" class="grid grid-cols-5 gap-3 content-center"> 
-      <div class="content-center col-span-2">
+    <div id="cart-item${[indexCart]}" class="flex items-center"> 
+      <div class="flex">
       <button id="trash${[indexCart]}" onclick="toTrash(${[indexCart]})" class="pr-2 text-sm sm:text-base"><img src="./assets/icon/trash.svg" alt="delete dish" class="h-3 w-auto hover:cursor-pointer"></button>
-        <button onclick="amountMinus(${[indexCart]})" class="hover:cursor-pointer text-sm">-</button>
+        <button onclick="amountMinus(${[indexCart]})" class="hover:cursor-pointer text-sm sm:text-base">-</button>
         <span id="count${[indexCart]}" class="p-4 text-sm sm:text-base">${cart[indexCart].amount}</span>
-        <button onclick="amountPlus(${[indexCart]})" class="hover:cursor-pointer">+</button>
+        <button onclick="amountPlus(${[indexCart]})" class="hover:cursor-pointer sm:text-base">+</button>
       </div>
-      <h4 class="p-2 text-sm sm:text-base col-span-2">${cart[indexCart].dish}</h4>
+      <div class="flex flex-1 justify-end">
+      <h4 class="p-2 text-sm sm:text-base">${cart[indexCart].dish}</h4>
       <p class="py-2 text-sm sm:text-base text-right"><span>${cart[indexCart].total.toFixed(2)}</span> €</p>
+      </div>
     </div>
   `
 };
