@@ -13,21 +13,26 @@
     <script src="./assets/js/cart-db.js"></script>
     <script src="./assets/js/dishes-db.js"></script>
     <script src="./assets/js/template.js"></script>
-    <script src="./order.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body onload="init()">
-  <header class="w-full flex justify-center items-center bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-[15vh] sm:h-[30vh] sticky-header">
-    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-[10vh] z-30 translate-y-13 sm:translate-y-45" alt="">  
-    <div id="order-modal" onclick="reloadPage(event)" class=" w-full px-4 h-dvh flex justify-center items-center close">
-      <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
-        <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
+  <header class="flex justify-between flex-col p-4">
+    <div class="flex">
+      <img src="./assets/images/logo.svg" class="h-7 flex" alt=""> <h3 class="flex text-xl text-gray-800 px-4">My Delivery</h3> 
+    </div>
+  </header>
+  <main class="w-full h-full">
+    <div  class="w-full flex justify-center items-center bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-72 sticky-header">
+      <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-35 z-20 translate-y-13 sm:translate-y-35" alt="">  
+      <div id="order-modal" onclick="reloadPage(event)" class=" w-full px-4 h- flex justify-center items-center close">
+        <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
+          <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
             <h3 id="description-header" class="text-xl h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
+          </div>
         </div>
       </div>
     </div>
-  </header>
-  <main class="w-full">
-    <div class=" flex mx-auto container-width px-4 sm:px-6 sm:py-24 lg:px-8">
+    <div class=" flex mx-auto container-width px-4 sm:px-6 lg:px-8">
       <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
         <div id="restaurants-container" class="flex sm:grow flex-col mt-10">
           <div class="w-full">
@@ -39,24 +44,23 @@
             <div class="flex">
               <img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen"><img src="./assets/icon/star.svg" class="h-4 flex" alt="stern bewertungen">
             </div>
-
           </div>
-          <div id="restaurants"></div>
+          <div id="restaurants" class="py-10"></div>
         </div>
-        <div id="cart-container" class="flex w-72 sm:w-96 flex-col mobile-cart sm:ml-7 close-cart">
-          <div id="cart-body" class="flex flex-col  mt-4 p-4 cart-bg rounded-2xl sm:top:[30vh] sticky-order">
+        <div id="cart-container" class="flex w-72  z-40 sm:w-96 flex-col sticky top-0 h-100vh cart-bg sm:ml-7 close-cart">
+          <div id="cart-body" class="flex flex-col  z-40 mt-4 p-4 rounded-2xl sticky top-0 sm:top-0">
             <h2 class="text-xl sm:text-3xl pt-6">Warenkorb</h2>
             <div id="cart-items" class=""></div>
             <div id="grand-total" class="flex flex-col"></div>
           </div>
         </div>
-        <div class="z-20 w-72 fixed bottom-2">
+        <div class="w-72 fixed bottom-2">
           <button onclick="orderDishes()" class="sm:hidden rounded-2xl text-sm mt-1 uppercase text-white cart-btn w-full shadow-sm p-3 hover:cursor-pointer">jetzt bestellen</button>
           <button onclick="shopping()" class="sm:hidden rounded-2xl text-sm mt-2 uppercase text-white cart-btn w-full shadow-sm  p-3  hover:cursor-pointer"><span id="mini-indicator" class="text-sm"></span></button>
         </div>
       </div>
     </div>
   </main>
-  <footer><div class="p-3 bg-gray-800">footer</div></footer>
+  <footer class="block z-50 fixed bottom-0 w-full"><div class="p-3 bg-gray-800">copyright&copy; 2025 sukram</div></footer>
 </body>
 </html>

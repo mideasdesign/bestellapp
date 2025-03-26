@@ -49,28 +49,16 @@ ol[role='list']{
     .close-cart{
       display: flex;
     }
-    .mobile-cart{
-      position: relative;
-      top: 0;
-      
-    }
-  }
- .sticky-order{
-    position:sticky ;
-    top:450px;
-  }
-  .sticky-header{
-    position: sticky;
-    top:0;
   }
   .cart-bg{
     background-color: #D0C7BA;
   }
   .cart-btn{
     background: #a80202;
+    border: 1px solid transparent;
   }
   .cart-btn:hover{
-    background:transparent;
+    background:#790202;
     border: 1px solid #a80202;
   }
   .indicator{
@@ -82,9 +70,4 @@ ol[role='list']{
   }
   .primary-color{
     color:#a80202;
-  }
-  .mobile-cart{
-    position: fixed;
-    top: 35vh;
-
   }
