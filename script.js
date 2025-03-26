@@ -23,7 +23,7 @@ function allDishesItems() {
 
 function cartItemsList() {
   let cartItemsListRef = document.getElementById('cart-items');
-cartItemsListRef.innerHTML = "";
+  cartItemsListRef.innerHTML = "";
   for (let indexCart = 0; indexCart < cart.length; indexCart++) {
   cartItemsListRef.innerHTML += getCartTemplate(indexCart);
   }
@@ -70,7 +70,7 @@ function grandTotal() {
   let grandTotal = totalSum + 3.50;
   grandTotalRef.innerHTML += getGrandTotalTemplate(grandTotal);
   saveToLocalStorage();
-cartItemsList();
+  cartItemsList();
 }
 
 function amountPlus(indexCart) {
@@ -95,9 +95,15 @@ function toTrash(indexCart){
   renderAll();
 }
 
-function orderDishes() {
-  localStorage.clear();
-  modalOverlay();
+function orderDishes(indexCart) {
+  if(cart == 0){
+    location.reload();
+  }
+  else{
+    localStorage.clear();
+    modalOverlay();
+  }
+
 };
 
 function modalOverlay(event){

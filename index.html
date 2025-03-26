@@ -16,25 +16,24 @@
     <script src="./script.js"></script>
 </head>
 <body onload="init()">
-  <header class="flex justify-between flex-col p-4">
+  <header class="flex justify-between flex-col p-3">
     <div class="flex">
-      <img src="./assets/images/logo.svg" class="h-7 flex" alt=""> <h3 class="flex text-xl text-gray-800 px-4">My Delivery</h3> 
+      <img src="./assets/images/logo.svg" class="h-5 flex" alt=""> <h3 class="flex text-xl text-gray-800 px-4">My Delivery</h3> 
     </div>
   </header>
-  <div  class="w-full flex justify-center items-center bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-72 sticky-header">
-    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-20 sm:h-35 z-20 translate-y-17 sm:translate-y-35" alt="">  
-    <div id="order-modal" onclick="reloadPage(event)" class=" w-full z-50 px-4 h-full fixed top-0 flex justify-center items-center close">
-      <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
-        <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 md:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
-          <h3 id="description-header" class="text-xl h-auto md:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
-        </div>
+  <div id="order-modal" onclick="reloadPage(event)" class=" w-full z-50 px-4 h-full fixed top-0 flex justify-center items-center close">
+    <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
+      <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 base:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
+        <h3 id="description-header" class="text-xl h-auto base:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
       </div>
     </div>
   </div>
-  <main class="w-full h-full">
-    <div class=" flex container-width mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="sr-only"><span class="ai-restaurant"></span></h2>
-        <div id="restaurants-container" class="flex w-full sm:grow flex-col mt-12 sm:mt-10">
+  <div  class="w-full flex justify-center items-center -z-10 bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-80">
+    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-20 sm:h-35 z-10 translate-y-17 sm:translate-y-35" alt="">  
+  </div>
+  <main class="w-full mt-[-320px] z-10">
+    <div class=" flex container-width mx-auto px-4 z-0 sm:px-6 lg:px-8">
+        <div id="restaurants-container" class="flex w-full base:w-[50%] z-0 base:grow flex-col mt-12 sm:mt-[340px]">
           <div class="w-full">
             <address>
               <h1 class="sm:text-xl text-lg primary-color">Sushi Heaven</h1>
@@ -47,20 +46,19 @@
           </div>
           <div id="restaurants" class="block py-10"></div>
         </div>
-        <div id="cart-container" class="flex sm:flex z-40 min-w-[30%] max-w-96 flex-col fixed sm:sticky top-36  sm:h-100vh bg-[#D0C7BA] sm:ml-7 close-cart">
-          <div id="cart-body" class="flex flex-col z-40 w-[95%] mt-4 p-4 fixed sm:sticky top-30 sm:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
-            <h2 class="text-xl sm:text-3xl pt-4 sm:pt-6">Warenkorb</h2>
-            <div id="cart-items" class=""></div>
+        <div id="cart-container" class="flex z-[900] base:w-[38%] md:max-w-[44%] flex-col sm:sticky p-0 ml-[8%] base:h-100vh bg-[#D0C7BA] sm:ml-7 close-cart">
+          <div id="cart-body" class="flex flex-col z-[900] w-[95%]  h-72 base:h-[500px] mt-4 p-4 fixed sm:sticky top-10 base:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
+            <h2 class="text-xl base:text-3xl pt-4 sm:pt-6">Warenkorb</h2>
+            <div id="cart-items" class="base:h-[500px] overflow-y-scroll"></div>
             <div id="grand-total" class="flex flex-col"></div> 
           </div>
         </div>
-      </div>
     </div>
     <div class="w-full  px-10 fixed bottom-13">
-      <button onclick="orderDishes()" class="sm:hidden rounded-2xl text-sm mt-1 uppercase text-white cart-btn w-full shadow-sm p-3 hover:cursor-pointer">jetzt bestellen</button>
-      <button onclick="shopping()" class="sm:hidden rounded-2xl text-sm mt-2 uppercase text-white cart-btn w-full shadow-sm  p-3  hover:cursor-pointer"><span id="mini-indicator" class="text-sm"></span></button>
+      <button onclick="orderDishes()" class="base:hidden rounded-2xl text-sm mt-1 uppercase text-white cart-btn w-full shadow-sm p-3 hover:cursor-pointer">jetzt bestellen</button>
+      <button onclick="shopping()" class="base:hidden rounded-2xl text-sm mt-2 uppercase text-white cart-btn w-full shadow-sm  p-3  hover:cursor-pointer"><span id="mini-indicator" class="text-sm"></span></button>
     </div>
   </main>
-  <footer class="block z-50 fixed bottom-0 w-full"><div class="p-3 bg-gray-800">copyright&copy; 2025 sukram</div></footer>
+  <footer class="block z-50 fixed bottom-0 w-full"><div class="p-3 bg-gray-200">copyright&copy; 2025 sukram</div></footer>
 </body>
 </html>

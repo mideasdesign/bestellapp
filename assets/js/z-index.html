@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        header{
+            height:30px;
+            background-color: aquamarine;
+            z-index:10;
+            display:flex;
+        }
+        main{
+            height:100%;
+            background:gray;
+            z-index:20;
+            display:flex;
+        }
+        section.one{
+            height:100px;
+            background: Black;
+            z-index:70;
+            display:flex;
+            width:100%;
+        }
+        section.two{
+            height:100px;
+            background: blue;
+            z-index:100;
+            display:flex;
+            width:100%;
+            position:sticky;
+            top:0;
+            left:0;
+        }
+    </Style>
+</head>
+<body>
+    <header> header</header>
+    <main><section class="one">Das ist der Tesxt</section><section class="two">das ist der Text</section></main>
+</body>
+</html>

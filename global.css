@@ -2,7 +2,10 @@
 *, *::before, *::after{
    box-sizing: border-box;
 }
+@theme{
 
+--breakpoint-base: 56.563rem;
+}
 img{
     max-width: 100%;
     display:block;
@@ -45,7 +48,7 @@ ol[role='list']{
   .close-cart{
     display: none;
   }
-  @media(min-width:660px){
+  @media(min-width:906px){
     .close-cart{
       display: flex;
     }
@@ -60,9 +63,6 @@ ol[role='list']{
   .cart-btn:hover{
     background:#790202;
     border: 1px solid #a80202;
-  }
-  .indicator{
-    background: #a80202;
   }
   .indicator-container{
     margin-top: -16px;
