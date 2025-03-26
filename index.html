@@ -21,8 +21,8 @@
       <img src="./assets/images/logo.svg" class="h-5 flex" alt=""> <h3 class="flex text-xl text-gray-800 px-4">My Delivery</h3> 
     </div>
   </header>
-  <div id="order-modal" onclick="reloadPage(event)" class=" w-full z-50 px-4 h-full fixed top-0 flex justify-center items-center close">
-    <div id="modal-content" class="overlay z-50 px-5 flex h-96 justify-center items-center w-full">
+  <div id="order-modal" onclick="reloadPage(event)" class=" w-full z-[950] px-4 h-full fixed top-0 flex justify-center items-center close">
+    <div id="modal-content" class="overlay z-[950] px-5 flex h-96 justify-center items-center w-full">
       <div onclick="event.stopPropagation()" class="flex flex-col even w-full justify-center items-center p-6 base:w-2xl shadow-2xl bg-gray-900 rounded-3xl">
         <h3 id="description-header" class="text-xl h-auto base:text-2xl text-center px-5 mb-7 text-gray-200">Vielen Dank für Ihre Bestellung! <br>Wir werden Ihre Bestellung jetzt vorbereiten</h3>
       </div>
@@ -33,7 +33,7 @@
   </div>
   <main class="w-full mt-[-320px] z-10">
     <div class=" flex container-width mx-auto px-4 z-0 sm:px-6 lg:px-8">
-        <div id="restaurants-container" class="flex w-full base:w-[50%] z-0 base:grow flex-col mt-12 sm:mt-[340px]">
+        <div id="restaurants-container" class="flex w-full base:w-[50%] z-0 base:grow flex-col mt-[370px]">
           <div class="w-full">
             <address>
               <h1 class="sm:text-xl text-lg primary-color">Sushi Heaven</h1>
@@ -46,8 +46,8 @@
           </div>
           <div id="restaurants" class="block py-10"></div>
         </div>
-        <div id="cart-container" class="flex z-[900] base:w-[38%] md:max-w-[44%] flex-col sm:sticky p-0 ml-[8%] base:h-100vh bg-[#D0C7BA] sm:ml-7 close-cart">
-          <div id="cart-body" class="flex flex-col z-[900] w-[95%]  h-72 base:h-[500px] mt-4 p-4 fixed sm:sticky top-10 base:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
+        <div id="cart-container" class="flex z-[900] base:w-[38%] md:max-w-[44%] flex-col sm:sticky p-0 base:ml-[8%] base:h-100vh bg-[#D0C7BA] sm:ml-7 close-cart">
+          <div id="cart-body" class="flex flex-col z-[900] w-[95%]  h-96 base:h-[500px] mt-4 p-4 fixed sm:sticky top-10 base:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
             <h2 class="text-xl base:text-3xl pt-4 sm:pt-6">Warenkorb</h2>
             <div id="cart-items" class="base:h-[500px] overflow-y-scroll"></div>
             <div id="grand-total" class="flex flex-col"></div> 
