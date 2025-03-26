@@ -21,7 +21,7 @@ function getCartTemplate(indexCart){
       <div class="flex">
       <button id="trash${[indexCart]}" onclick="toTrash(${[indexCart]})" class="pr-2 text-sm sm:text-base"><img src="./assets/icon/trash.svg" alt="delete dish" class="h-3 w-auto hover:cursor-pointer"></button>
         <button onclick="amountMinus(${[indexCart]})" class="hover:cursor-pointer text-sm sm:text-base">-</button>
-        <span id="count${[indexCart]}" class="p-4 text-sm sm:text-base">${cart[indexCart].amount}</span>
+        <span id="count${[indexCart]}" class="p-4 text-sm md:text-base">${cart[indexCart].amount}</span>
         <button onclick="amountPlus(${[indexCart]})" class="hover:cursor-pointer sm:text-base">+</button>
       </div>
       <div class="flex flex-1 justify-end">
@@ -35,8 +35,8 @@ function getCartTemplate(indexCart){
 function getGrandTotalTemplate(grandTotal){
   return /* html */`
     <div id="sum-container" class="grid grid-cols-3 gap-3 mt-5">
-      <h4 class="text-sm sm:text-xl col-span-2">Lieferkosten:</h4><p class="text-sm sm:text-xl text-right">${3.50.toFixed(2)} €</p>
-      <h4 class="text-sm sm:text-xl col-span-2">Gesamtkosten:</h4><p class="text-sm sm:text-xl text-right">${grandTotal.toFixed(2)} €</p>
+      <h4 class="text-sm md:text-xl col-span-2">Lieferkosten:</h4><p class="text-sm md:text-xl text-right">${3.50.toFixed(2)} €</p>
+      <h4 class="text-sm md:text-xl col-span-2">Gesamtkosten:</h4><p class="text-sm md:text-xl text-right">${grandTotal.toFixed(2)} €</p>
       <button onclick="orderDishes()" class="rounded-2xl text-sm sm:text-base mt-7 uppercase text-white cart-btn w-full shadow-sm  p-3 col-span-3 hover:cursor-pointer">jetzt bestellen</button>
       <button onclick="shopping()" class="sm:hidden rounded-2xl text-sm sm:text-base mt-2 uppercase text-white cart-btn w-full shadow-sm p-3 col-span-3 hover:cursor-pointer">weiter einkaufen</button>
     </div>

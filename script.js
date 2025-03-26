@@ -10,6 +10,7 @@ function renderAll() {
   saveToLocalStorage();
   cartItemsList();
   grandTotal();
+  miniIndicator();
 };
 
 function allDishesItems() {
@@ -113,7 +114,7 @@ function miniIndicator(indexCart) {
   let indicator = document.getElementById('mini-indicator');
   let totalSum = cart.reduce((sum, item) => sum + item.total, 0);
   let grandTotal = totalSum + 3.50;
-  indicator.innerHTML += getMiniIndicatorTemplate(grandTotal);
+  indicator.innerHTML = getMiniIndicatorTemplate(grandTotal);
 }
 
 function reloadPage() {
