@@ -5,6 +5,7 @@
 @theme{
 
 --breakpoint-base: 56.563rem;
+--breakpoint-xxl: 160rem
 }
 img{
     max-width: 100%;
