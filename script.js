@@ -24,8 +24,14 @@ function allDishesItems() {
 function cartItemsList() {
   let cartItemsListRef = document.getElementById('cart-items');
   cartItemsListRef.innerHTML = "";
-  for (let indexCart = 0; indexCart < cart.length; indexCart++) {
-  cartItemsListRef.innerHTML += getCartTemplate(indexCart);
+  if (cart == 0) {
+    cartItemsListRef.innerHTML = `<p class="mt-20 text-center text-xl">&nbsp;<br>Ihr Warbenkorb ist leider noch leer!</p>`;
+    document.getElementById('grand-total').classList.add('d_none');
+  }
+  else{
+    for (let indexCart = 0; indexCart < cart.length; indexCart++) {
+    cartItemsListRef.innerHTML += getCartTemplate(indexCart);
+    }
   }
 };
 
@@ -43,6 +49,7 @@ function addDish(indexDishes) {
       amount: 1
     };
     cart.push(newItem);
+    document.getElementById('grand-total').classList.remove('d_none')
   };
   renderAll();
 };
@@ -97,13 +104,12 @@ function toTrash(indexCart){
 
 function orderDishes(indexCart) {
   if(cart == 0){
-    location.reload();
+    document.getElementById('grand-total').classList.add('d_none');
   }
   else{
     localStorage.clear();
     modalOverlay();
   }
-
 };
 
 function modalOverlay(event){

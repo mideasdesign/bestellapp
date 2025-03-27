@@ -10,7 +10,6 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"/>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./assets/js/cart-db.js"></script>
     <script src="./assets/js/dishes-db.js"></script>
     <script src="./assets/js/template.js"></script>
     <script src="./script.js"></script>
@@ -28,8 +27,8 @@
       </div>
     </div>
   </div>
-  <div  class="w-full flex justify-center items-center -z-10 bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-80">
-    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-20 sm:h-35 z-10 translate-y-17 sm:translate-y-35" alt="">  
+  <div  class="w-full flex items-end -z-10 bg-[url(./assets/images/pexels-rajesh-tp-749235-2098085_calafonia_roll.jpg)] bg-cover bg-center h-36 sm:h-80">
+    <img src="./assets/images/logo-shusi-heaven.webp" class="bg-cover bg-center h-20 sm:h-35 z-10 ml-[28%] sm:ml-[35%] base:ml-[25%]  translate-10 base:translate-y-17" alt="">  
   </div>
   <main class="w-full mt-[-320px] z-10">
     <div class=" flex container-width mx-auto px-4 z-0 sm:px-6 lg:px-8">
@@ -46,10 +45,10 @@
           </div>
           <div id="restaurants" class="block py-10"></div>
         </div>
-        <div id="cart-container" class="flex z-[900] base:w-[38%] md:max-w-[44%] flex-col base:sticky p-0 base:ml-[8%] base:h-100vh bg-[#D0C7BA] sm:ml-7 close-cart">
-          <div id="cart-body" class="flex flex-col z-[900] w-[95%]  min-h-[30%] base:h-[500px] mt-4 p-4 fixed base:sticky top-5 base:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
-            <h2 class="text-xl base:text-3xl pt-4 sm:pt-6">Warenkorb</h2>
-            <div id="cart-items" class=" min-h-[30%] base:h-[500px] overflow-y-auto"></div>
+        <div id="cart-container" class="flex z-[900] base:w-[38%] md:max-w-[44%] flex-col base:sticky p-0 base:ml-[8%] base:h-100vh bg-[#D0C7BA] md:ml-7 close-cart">
+          <div id="cart-body" class="flex flex-col z-[900] w-[95%]  min-h-[30%] base:h-[500px] mt-2 p-4 fixed base:sticky top-2 base:top-0 left-[2.2%] bg-[#D0C7BA] rounded-2xl">
+            <h2 class="text-xl base:text-3xl text-center pt-4 sm:pt-6">Warenkorb</h2>
+            <div id="cart-items" class=" h-36 base:h-[500px] overflow-y-auto"></div>
             <div id="grand-total" class="flex flex-col"></div> 
           </div>
         </div>
@@ -59,6 +58,6 @@
       <button onclick="shopping()" class="base:hidden rounded-2xl text-sm mt-2 uppercase text-white cart-btn w-full shadow-sm  p-3  hover:cursor-pointer"><span id="mini-indicator" class="text-sm"></span></button>
     </div>
   </main>
-  <footer class="block z-50 fixed bottom-0 w-full"><div class="p-3 bg-gray-200">copyright&copy; 2025 sukram</div></footer>
+  <footer class="block z-950 fixed bottom-0 w-full"><div class="p-3 bg-gray-200">copyright&copy; 2025 sukram</div></footer>
 </body>
 </html>

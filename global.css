@@ -48,6 +48,9 @@ ol[role='list']{
   .close-cart{
     display: none;
   }
+  .d_none{
+    display: none;
+  }
   @media(min-width:906px){
     .close-cart{
       display: flex;

@@ -63,3 +63,5 @@ let allDishes = [
     "img": "./assets/images/pexels-jazheel-inocencio-945922318-20127885-Tonkatsu.webp",
   }
 ];
+
+let cart = [];
